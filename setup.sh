@@ -229,7 +229,7 @@ if [ "$UPDATE_ZSH" == "true" ]; then
     fi
 
     echo ">> Updating ZSH Theme..."
-    sed -i 's/ZSH_THEME=".*"/ZSH_THEME="agnoster"/' ~/.zshrc
+    sed -i 's/ZSH_THEME=".*"/ZSH_THEME="jonathan"/' ~/.zshrc
     source ~/.zshrc &> /dev/null
 fi
 
