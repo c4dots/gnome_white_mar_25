@@ -189,7 +189,9 @@ cd ..
 
 # Reload gnome shell
 echo ">> Reloading gnome shell..."
-killall -HUP gnome-shell &> /dev/null
+if [ "$XDG_SESSION_TYPE" != "wayland" ]; then
+    killall -HUP gnome-shell &> /dev/null
+fi
 
 # Enable extensions
 echo ">> Disabling extensions that might cause conflicts..."
@@ -213,7 +215,9 @@ if [ "$INSTALL_SEARCH_LIGHT" == "true" ]; then
     gnome-extensions enable search-light@icedman.github.com &> /dev/null
 fi
 
-killall -HUP gnome-shell &> /dev/null
+if [ "$XDG_SESSION_TYPE" != "wayland" ]; then
+    killall -HUP gnome-shell &> /dev/null
+fi
 ########################################### EXTENSIONS ###########################################
 
 ########################################### ZSHELL ###########################################
