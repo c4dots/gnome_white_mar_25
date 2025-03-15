@@ -66,6 +66,7 @@ if [ "$INSTALL_THEMES" == "true" ]; then
         git clone https://github.com/vinceliuice/Colloid-gtk-theme &> /dev/null
         cd Colloid-gtk-theme
         sh install.sh --tweaks rimless normal -n Colloid-Light-Nord &> /dev/null
+        cd ..
     else
         echo ">> Colloid Theme is already installed, skipping."
     fi
