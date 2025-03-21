@@ -190,7 +190,7 @@ cd ..
 # Reload gnome shell
 echo ">> Reloading gnome shell..."
 if [ "$XDG_SESSION_TYPE" != "wayland" ]; then
-    killall -HUP gnome-shell &> /dev/null
+    dbus-launch killall -HUP gnome-shell &> /dev/null
 fi
 
 # Enable extensions
@@ -216,7 +216,7 @@ if [ "$INSTALL_SEARCH_LIGHT" == "true" ]; then
 fi
 
 if [ "$XDG_SESSION_TYPE" != "wayland" ]; then
-    killall -HUP gnome-shell &> /dev/null
+    dbus-launch killall -HUP gnome-shell &> /dev/null
 fi
 ########################################### EXTENSIONS ###########################################
 
