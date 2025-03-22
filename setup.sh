@@ -118,6 +118,7 @@ fi
 if [ "$INSTALL_ICONS" == "true" ]; then
     if [ ! -d "$HOME/.icons/Futura" ]; then
         echo ">> Installing Futura Icon Theme..."
+        mkdir -p "$HOME/.icons"
         git clone https://github.com/coderhisham/Futura-Icon-Pack &> /dev/null
         cp -R Futura-Icon-Pack ~/.icons/Futura
     else
@@ -135,7 +136,7 @@ cd extensions
 
 function install_ding() {
     echo ">> Installing Desktop Icons NG..."
-    git clone https://gitlab.com/rastersoft/desktop-icons-ng /usr/share/gnome-shell/extensions/ding@rastersoft.com &> /dev/null
+    sudo git clone https://gitlab.com/rastersoft/desktop-icons-ng /usr/share/gnome-shell/extensions/ding@rastersoft.com &> /dev/null
 
     dconf load / < ../conf/ding
 }
@@ -146,26 +147,26 @@ function install_top_bar() {
     # Open bar
     echo " | Installing Openbar..."
     git clone https://github.com/neuromorph/openbar &> /dev/null
-    cp -R openbar/openbar@neuromorph/ /usr/share/gnome-shell/extensions/
+    sudo cp -R openbar/openbar@neuromorph/ /usr/share/gnome-shell/extensions/
 
     # Top bar organizer
     echo " | Installing Top Bar Organizer..."
     git clone https://gitlab.gnome.org/june/top-bar-organizer &> /dev/null
-    cp -R top-bar-organizer/src /usr/share/gnome-shell/extensions/top-bar-organizer@julian.gse.jsts.xyz
+    sudo cp -R top-bar-organizer/src /usr/share/gnome-shell/extensions/top-bar-organizer@julian.gse.jsts.xyz
 
     dconf load / < ../conf/topbar
 }
 
 function install_search_light() {
     echo ">> Installing Search Light..."
-    git clone https://github.com/icedman/search-light /usr/share/gnome-shell/extensions/search-light@icedman.github.com &> /dev/null
+    sudo git clone https://github.com/icedman/search-light /usr/share/gnome-shell/extensions/search-light@icedman.github.com &> /dev/null
     dconf load / < ../conf/searchlight
 }
 
 function install_dash_to_dock() {
     echo ">> Installing Dash to Dock..."
     git clone https://github.com/micheleg/dash-to-dock &> /dev/null
-    make -C dash-to-dock install &> /dev/null
+    sudo make -C dash-to-dock install &> /dev/null
     dconf load / < ../conf/dashtodock
 }
 
