@@ -161,11 +161,7 @@ function install_top_bar() {
 
 function install_search_light() {
     echo ">> Installing Search Light..."
-    git init ~/.local/share/gnome-shell/extensions/search-light@icedman.github.com &> /dev/null && \
-    cd ~/.local/share/gnome-shell/extensions/search-light@icedman.github.com && \
-    git remote add origin https://github.com/icedman/search-light.git && \
-    git fetch origin 591cadb98f88635b17a1b9671acc9ff958c9f9f9 && \
-    git checkout 591cadb98f88635b17a1b9671acc9ff958c9f9f9
+    git clone https://github.com/icedman/search-light ~/.local/share/gnome-shell/extensions/search-light@icedman.github.com &> /dev/null
     dconf load / < ../conf/searchlight
 }
 
