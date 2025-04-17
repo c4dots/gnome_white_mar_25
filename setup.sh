@@ -167,8 +167,7 @@ function install_search_light() {
 
 function install_dash_to_dock() {
     echo ">> Installing Dash to Dock..."
-    git clone https://github.com/micheleg/dash-to-dock &> /dev/null
-    make -C dash-to-dock install &> /dev/null
+    sudo git clone https://github.com/micheleg/dash-to-dock /usr/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com &> /dev/null
     dconf load / < ../conf/dashtodock
 }
 
